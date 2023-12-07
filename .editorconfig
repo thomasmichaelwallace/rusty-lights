@@ -1,0 +1,17 @@
+# EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs.
+# For more information about the EditorConfig project, visit http://editorconfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Rust files
+[*.rs]
+indent_style = tab
+indent_size = 4

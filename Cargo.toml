@@ -47,6 +47,7 @@ log = "0.4"
 pio-proc = "0.2"
 pio = "0.2.1"
 rand = { version = "0.8.5", default-features = false }
+dht20 = "0.1.0"
 
 [profile.release]
 debug = 2

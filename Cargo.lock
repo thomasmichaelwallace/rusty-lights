@@ -329,6 +329,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "dht20"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7ba8a92efcd941c0c86b7211699dc8bd6ec8924a77d4c2977702989e56726ca3"
+dependencies = [
+ "embedded-hal 0.2.7",
+ "log",
+]
+
+[[package]]
 name = "diff"
 version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1484,6 +1494,7 @@ dependencies = [
  "cyw43-pio",
  "defmt",
  "defmt-rtt",
+ "dht20",
  "display-interface",
  "display-interface-spi",
  "embassy-embedded-hal",

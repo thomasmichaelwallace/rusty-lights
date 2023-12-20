@@ -4,7 +4,6 @@
 
 mod neopixel;
 
-use defmt::*;
 use embassy_executor::Spawner;
 use embassy_rp::adc::{Adc, Channel, Config, InterruptHandler as AdcInterruptHandler};
 use embassy_rp::bind_interrupts;
@@ -51,7 +50,7 @@ async fn main(_spawner: Spawner) {
 
     let mut rng = RoscRng;
 
-    const NUM_LEDS: usize = 12;
+    const NUM_LEDS: usize = 15;
     let mut colours = [RGB8::default(); NUM_LEDS];
 
     // Loop forever making RGB values and pushing them out to the WS2812.

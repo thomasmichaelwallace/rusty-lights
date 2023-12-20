@@ -13,5 +13,14 @@
   "rust-analyzer.cargo.target": "thumbv6m-none-eabi",
   "rust-analyzer.cargo.features": [
     // "nightly",
+  ],
+  "cSpell.words": [
+    "defmt",
+    "gpio",
+    "Irqs",
+    "neopixel",
+    "PINDIRS",
+    "reborrow",
+    "Rosc"
   ]
 }

@@ -83,7 +83,7 @@ pub mod neopixel {
         }
 
         pub async fn write(&mut self, colors: &[RGB8; N]) {
-            // Precompute the word bytes from the colors
+            // Pre-compute the word bytes from the colors
             let mut words = [0u32; N];
             for i in 0..N {
                 let word =

@@ -2,7 +2,6 @@
 #![no_main]
 #![feature(type_alias_impl_trait)]
 
-use defmt::*;
 use embassy_executor::Spawner;
 use embassy_rp::gpio::{Level, Output};
 use embassy_rp::peripherals::{PIN_14, PIN_25};

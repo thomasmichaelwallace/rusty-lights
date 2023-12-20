@@ -2,7 +2,6 @@
 #![no_main]
 #![feature(type_alias_impl_trait)]
 
-use defmt::*;
 use embassy_executor::Spawner;
 use embassy_rp::gpio::{self, Pin};
 use embassy_time::Timer;

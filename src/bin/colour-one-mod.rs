@@ -42,9 +42,7 @@ async fn main(_spawner: Spawner) {
     info!("Start");
     let p = embassy_rp::init(Default::default());
 
-    let Pio {
-        mut common, sm0, sm1, ..
-    } = Pio::new(p.PIO0, Irqs);
+    let Pio { mut common, sm0, .. } = Pio::new(p.PIO0, Irqs);
 
     let mut left_colour = [RGB8::default(); 1];
     let mut right_colour = [RGB8::default(); 1];

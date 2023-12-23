@@ -966,6 +966,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604"
 
 [[package]]
+name = "hd44780-driver"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aab2b13fdeaed7dde9133a57c28b2cbde4a8fc8c3196b5631428aad114857d3a"
+dependencies = [
+ "embedded-hal 0.2.7",
+]
+
+[[package]]
 name = "heapless"
 version = "0.7.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1516,6 +1525,7 @@ dependencies = [
  "fixed",
  "fixed-macro",
  "futures",
+ "hd44780-driver",
  "heapless 0.8.0",
  "log",
  "panic-probe",

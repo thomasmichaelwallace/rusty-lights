@@ -13,6 +13,7 @@ use embassy_rp::peripherals::PIO0;
 use embassy_rp::pio::{InterruptHandler as PioInterruptHandler, Pio};
 use embassy_time::Delay;
 use hd44780_driver::HD44780;
+use shared_bus::BusManagerSimple;
 use smart_leds::RGB8;
 use {defmt_rtt as _, panic_probe as _};
 
@@ -48,7 +49,9 @@ async fn main(_spawner: Spawner) {
     let sda = p.PIN_14;
     let scl = p.PIN_15;
     let i2c = I2c::new_blocking(p.I2C1, scl, sda, Config::default());
-    let mut lcd = HD44780::new_i2c(i2c, 0x27, &mut Delay).unwrap();
+    let manager = BusManagerSimple::new(i2c);
+
+    let mut lcd = HD44780::new_i2c(manager.acquire_i2c(), 0x27, &mut Delay).unwrap();
 
     info!("setting lcd");
     lcd.reset(&mut Delay).unwrap();
@@ -58,10 +61,7 @@ async fn main(_spawner: Spawner) {
     lcd.write_str("Martin!", &mut Delay).unwrap();
 
     info!("setting up temperature");
-    let sda_t = p.PIN_12;
-    let scl_t = p.PIN_13;
-    let i2c_t = I2c::new_blocking(p.I2C0, scl_t, sda_t, Config::default());
-    let mut sensor = Dht20::new(i2c_t, 0x38, Delay);
+    let mut sensor = Dht20::new(manager.acquire_i2c(), 0x38, Delay);
 
     let reading = sensor.read().unwrap();
     let temp = reading.temp;

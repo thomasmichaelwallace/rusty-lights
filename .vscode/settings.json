@@ -15,6 +15,7 @@
     // "nightly",
   ],
   "cSpell.words": [
+    "autoscroll",
     "defmt",
     "gpio",
     "Irqs",
